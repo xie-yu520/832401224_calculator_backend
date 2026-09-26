@@ -10,6 +10,9 @@ data/
 *.db
 *.sqlite3
 
+# 前端静态页面副本（部署时拷贝进来的产物，前端代码以前端仓库为准）
+web/
+
 .idea/
 .vscode/
 .DS_Store

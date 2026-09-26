@@ -159,8 +159,14 @@ CREATE INDEX IF NOT EXISTS idx_history_created_at
 ├── run.py                          # 启动入口
 ├── requirements.txt
 ├── codestyle.md                    # 代码规范（基于 PEP 8）
+├── web/                            # 部署副本：前端静态页面（不入库，见下方说明）
 └── data/                           # SQLite 数据文件（首次启动生成）
 ```
+
+> **关于 `web/` 目录**：这是部署时从 `832401224_calculator_frontend/src` 拷贝过来的前端静态文件副本，
+> 仅用于让部署环境用一个地址同时访问前后端。它已写入 `.gitignore`，**前端代码以后端仓库之外的前端仓库为唯一来源**。
+> 若该目录不存在（例如本地只做接口调试），Flask 不会注册静态路由，后端行为不变。
+> 前端依旧通过 HTTP 接口 `/api/*` 获取结果，不做本地计算，前后端分离架构不变。
 
 ## 10. API 文档
 

@@ -23,6 +23,9 @@ class Config:
     # SQLite 数据库文件位置
     DB_PATH = os.environ.get("CALCULATOR_DB_PATH", str(PROJECT_ROOT / "data" / "calculator.db"))
 
+    # 前端静态页面目录（部署时把前端产物拷贝到这里，一个地址即可访问整个系统）
+    WEB_DIR = os.environ.get("CALCULATOR_WEB_DIR", str(PROJECT_ROOT / "web"))
+
     # 允许的跨域来源（默认全部放行，方便前后端分离部署）
     CORS_ORIGINS = os.environ.get("CALCULATOR_CORS_ORIGINS", "*")
 
